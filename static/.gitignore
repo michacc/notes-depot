@@ -1,0 +1,5 @@
+# Currently almost every file should be ignored
+*
+
+# This file should not be ignored
+!.gitignore

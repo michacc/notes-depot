@@ -1,0 +1,20 @@
+Default: &defaults
+  database: notes-depot.sqlite3
+  poolsize: 10
+
+Development:
+  <<: *defaults
+
+Testing:
+  database: notes-depot_test.sqlite3
+  <<: *defaults
+
+Staging:
+  database: notes-depot_staging.sqlite3
+  poolsize: 100
+  <<: *defaults
+
+Production:
+  database: notes-depot_production.sqlite3
+  poolsize: 100
+  <<: *defaults

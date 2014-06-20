@@ -150,7 +150,7 @@ renderFormGeneric resultMsg widget destRoute enctype submitText = [whamlet|
             $of NoMsg
         <form method=post enctype=#{enctype} action="@{destRoute}">
             ^{widget}
-            <p><input type=submit value="#{submitText}">
+            <p><input type="submit" value="#{submitText}">
     |]
 
 renderLoginForm :: (Yesod s, ToWidget s w) =>

@@ -1,0 +1,52 @@
+body, p, td {
+    font-family: "Helvetica Neue", "Trebuchet MS", Arial, sans-serif;
+    font-size: 14px;
+}
+
+h1 {
+    font-size: 25px;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    font-weight: bold;
+    color: red;
+}
+
+a:hover {
+    color: orange;
+}
+
+a:active {
+    color: gold;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
+div.errors {
+    color: red;
+    font-size: 12px;
+}
+
+input[type=text], input[type=password] {
+    min-width: 200px;
+}
+
+label::after {
+    white-space: pre;
+    content: "\A";
+}
+
+form > div:first-of-type {
+    padding-top: 0;
+}
+
+form > div {
+    padding: 10px 0;
+}

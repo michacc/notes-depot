@@ -10,7 +10,6 @@ import Settings
 import Yesod.Auth
 import Yesod.Default.Config
 import Yesod.Default.Main
-import Yesod.Default.Handlers
 import Network.Wai.Middleware.RequestLogger
     ( mkRequestLogger, outputFormat, OutputFormat (..), IPAddrSource (..), destination
     )

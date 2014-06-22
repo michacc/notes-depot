@@ -167,6 +167,9 @@ renderRegisterForm :: (Yesod s, ToWidget s w) =>
 renderRegisterForm resultMsg widget authToMaster enctype = do
     let destRoute = authToMaster registerR
     renderFormGeneric resultMsg widget destRoute enctype "Zarejestruj się"
+    [whamlet|
+        <p><a href="@{authToMaster LoginR}">Powrót do logowania</a>
+    |]
 
 postLoginR :: YesodAuthSimple site => AuthHandler site TypedContent
 postLoginR = do

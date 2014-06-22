@@ -1,0 +1,4 @@
+$maybe user <- maybeUser
+    <div ##{authInfoId}>Jesteś zalogowany jako <em>#{userName user}</em>. #
+        <a href="@{AuthR LogoutR}">Wyloguj się
+$nothing

@@ -1,4 +1,11 @@
 /static StaticR Static getStatic
 /auth   AuthR   Auth   getAuth
 
-/ HomeR GET
+/                                    HomeR          GET
+/list/#PageNumber                    NotesListR     GET
+/note/#NoteId                        NoteR          GET
+/add_note                            AddNoteR       GET POST
+/edit_note/#NoteId                   EditNoteR      GET POST
+/remove_note/#NoteId                 RemoveNoteR    POST
+/search/#URLEncodedText/#PageNumber  SearchR        GET
+/search                              SearchGatewayR GET

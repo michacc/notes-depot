@@ -6,6 +6,7 @@ import Yesod.Static
 import Yesod.Auth
 import Yesod.Default.Config
 import Yesod.Default.Util (addStaticContentExternal)
+import Data.Functor((<$>))
 import Network.HTTP.Client.Conduit (Manager, HasHttpManager (getHttpManager))
 import qualified Settings
 import Settings.Development (development)
@@ -18,6 +19,7 @@ import Text.Hamlet (hamletFile)
 import Yesod.Core.Types (Logger)
 import SimpleAuth
 import Internationalization
+import Types
 
 -- | The site argument for your application. This can be a good place to
 -- keep settings and values requiring initialization before your application
@@ -105,6 +107,10 @@ instance Yesod App where
 
     makeLogger = return . appLogger
 
+    isAuthorized (NotesListR _) _ = authorizedIfAuthenticated
+    isAuthorized AddNoteR _ = authorizedIfAuthenticated
+    isAuthorized _ _ = return Authorized
+
 -- How to run database actions.
 instance YesodPersist App where
     type YesodPersistBackend App = SqlPersistT
@@ -153,6 +159,15 @@ instance RenderMessage App FormMessage where
 -- | Get the 'Extra' value, used to hold data from the settings.yml file.
 getExtra :: Handler Extra
 getExtra = fmap (appExtra . settings) getYesod
+
+{- Returns Authorized if a user is currently authenticated. Otherwise, returns
+   AuthenticationRequired. -}
+authorizedIfAuthenticated :: Handler AuthResult
+authorizedIfAuthenticated = do
+    probablyAuthId <- maybeAuthId
+    case probablyAuthId of
+        Just _ -> return Authorized
+        Nothing -> return AuthenticationRequired
 
 -- Note: previous versions of the scaffolding included a deliver function to
 -- send emails. Unfortunately, there are too many different options for us to

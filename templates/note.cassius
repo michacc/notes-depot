@@ -1,0 +1,15 @@
+td.cellKey
+    font-weight: bold;
+    text-align: right;
+
+td.cellValue
+    padding-left: 5px;
+
+div#noteContent
+    pre
+        padding: 7px;
+        border: 1px solid black;
+        border-radius: 5px;
+        font-family: Consolas, Monaco, "Courier New", monospace;
+        background-color: #fffbe7;
+        white-space: pre-wrap;

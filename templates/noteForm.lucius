@@ -1,0 +1,16 @@
+form#noteForm {
+    div#noteTitle {
+        input {
+            width: 450px;
+            margin-left: 5px;
+            font-size: 12px;
+        }
+    }
+
+    textarea {
+        min-width: 500px;
+        min-height: 250px;
+        font-family: Consolas, Monaco, "Courier New", monospace;
+        font-size: 12px;
+    }
+}

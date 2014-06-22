@@ -1,0 +1,21 @@
+<h1>Notatka
+<table>
+    <tr>
+        <td .cellKey>Tytuł:
+        <td .cellValue>
+            $maybe title <- maybeTitle
+                #{title}
+            $nothing
+                <span #noteTitleEmpty>(brak)
+    <tr>
+        <td .cellKey>Data utworzenia:
+        <td .cellValue>#{show created}
+    <tr>
+        <td .cellKey>Operacje:
+        <td .cellValue><a href="@{EditNoteR noteId}">[Edytuj]</a> #
+            ^{createRemoveLink noteId "[Usuń]"}
+
+<div #noteContent>
+    <pre>#{content}
+
+<p><a href="@{NotesListR $ PageNumber 1}">Powrót do listy notatek</a>

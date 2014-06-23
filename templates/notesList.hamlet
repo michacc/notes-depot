@@ -2,9 +2,9 @@
 
 <form id="searchForm" method="get" action="@{SearchGatewayR}">
     $maybe searchPhrase <- maybeSearchPhrase
-        Wyszukiwanie: <input type="search" name="#{searchInputName}" value="#{searchPhrase}" required> #
+        Wyszukiwanie: <input type="search" name="#{searchInputName}" placeholder="fraza wyszukiwania" value="#{searchPhrase}" required> #
     $nothing
-        Wyszukiwanie: <input type="search" name="#{searchInputName}" required> #
+        Wyszukiwanie: <input type="search" name="#{searchInputName}" placeholder="fraza wyszukiwania" required> #
     <input type="submit" value="Szukaj">
 
 <p><a href="@{AddNoteR}">Dodaj notatkę</a>

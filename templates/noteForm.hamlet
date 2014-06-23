@@ -7,8 +7,10 @@ $case midMessage
         <p .error>#{text}
     $of NoMsg
 
-<form id="noteForm" method="post" action="@{destRoute}" enctype="#{enctype}">
+<form #noteForm method="post" action="@{destRoute}" enctype="#{enctype}">
     ^{widget}
     <input type="submit" value="#{submitText}">
 
-<p><a href="@{NotesListR $ PageNumber 1}">Powrót do listy notatek</a>
+<p>
+    <a href="@{NotesListR $ PageNumber 1}">
+        Powrót do listy notatek

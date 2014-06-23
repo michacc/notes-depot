@@ -24,10 +24,9 @@ website is in Polish.
 
 3. Add the directory with your local binaries of packages installed by cabal
    to PATH environment variable. Locations of the directory:
-
-   * Linux: `~/.cabal/bin`
-   * OS X: `~/Library/Haskell/bin`
-   * Windows: `%APPDATA%\cabal\bin`
+      * Linux: `~/.cabal/bin`
+      * OS X: `~/Library/Haskell/bin`
+      * Windows: `%APPDATA%\cabal\bin`
 
 4. Execute the following commands:
 

@@ -28,7 +28,7 @@ render title headerText maybeSearchPhrase entities allEntitiesCount pageNumber
     if rawPageNumber > allPagesCount
         then redirect $ destRoute $ PageNumber allPagesCount
         else return ()
-    setSession lastPageNumberKey $ T.pack . show $ pageNumber
+    setSession lastPageNumberKey $ T.pack . show $ rawPageNumber
     topbar
     $(widgetFile "notesList")
 

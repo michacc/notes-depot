@@ -2,6 +2,9 @@ form#searchForm
     input[type=search]
         min-width: 300px;
 
+div#notesList
+    margin: 20px 0 20px;
+
 div.note
     padding: 0;
     margin: 10px;

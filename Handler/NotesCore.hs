@@ -61,7 +61,7 @@ render title headerText midMessage destRoute formInit submitText = do
     (widget, enctype) <- getForm formInit
     defaultLayout $ do
         setTitle $ toHtml title
-        loginBox
+        topbar
         $(widgetFile "noteForm")
     where getForm (NoInit widget enctype) = return (widget, enctype)
           getForm (InitNoteData noteData) = generateFormPost $ noteForm $ Just noteData

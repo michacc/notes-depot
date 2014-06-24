@@ -1,0 +1,16 @@
+div#topbar
+    margin: 0 0 20px;
+    padding: 0;
+    border-bottom: 1px dotted gray;
+
+div#menu
+    display: inline-block;
+
+div.menuLink
+    display: inline-block;
+    padding: 0px 10px 7px;
+
+div##{authInfoId}
+    float: right;
+    padding-right: 5px;
+    display: inline-block;

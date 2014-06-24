@@ -7,27 +7,26 @@
         Wyszukiwanie: <input type="search" name="#{searchInputName}" placeholder="fraza wyszukiwania" required> #
     <input type="submit" value="Szukaj">
 
-<p><a href="@{AddNoteR}">Dodaj notatkę</a>
-
 $if null entities
     <p>Brak notatek.
 $else
-    $forall (Entity noteId (Note maybeTitle content created _)) <- entities
-        <div .note>
-            <a .noteLink href="@{NoteR noteId}">
-                <div .noteData>
-                    <div .noteHeader>
-                    $maybe title <- maybeTitle
-                        <span .noteTitle>#{title}
-                        <span .noteDate>#{show created}
-                    $nothing
-                        <span .noteTitleEmpty>(brak tytułu)
-                        <span .noteDate>#{show created}
-                    <div .notePreview>#{T.take notePreviewLength content}
-            <div .noteOperations>
-                <a href="@{EditNoteR noteId}">[Edytuj]
-                <br>
-                ^{createRemoveLink noteId "[Usuń]"}
+    <div #notesList>
+        $forall (Entity noteId (Note maybeTitle content created _)) <- entities
+            <div .note>
+                <a .noteLink href="@{NoteR noteId}">
+                    <div .noteData>
+                        <div .noteHeader>
+                        $maybe title <- maybeTitle
+                            <span .noteTitle>#{title}
+                            <span .noteDate>#{show created}
+                        $nothing
+                            <span .noteTitleEmpty>(brak tytułu)
+                            <span .noteDate>#{show created}
+                        <div .notePreview>#{T.take notePreviewLength content}
+                <div .noteOperations>
+                    <a href="@{EditNoteR noteId}">[Edytuj]
+                    <br>
+                    ^{createRemoveLink noteId "[Usuń]"}
 
 <p>Strony:
     $forall n <- pagesNumbers

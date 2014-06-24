@@ -1,0 +1,11 @@
+$maybe user <- maybeUser
+    <div #topbar>
+        <div #menu>
+            <a href="@{HomeR}">
+                <div .menuLink>Moje notatki
+            <a href="@{AddNoteR}">
+                <div .menuLink>Dodaj notatkę
+        <div ##{authInfoId}>
+                Jesteś zalogowany jako <em>#{userName user}</em>. #
+                <a href="@{AuthR LogoutR}">Wyloguj się
+$nothing

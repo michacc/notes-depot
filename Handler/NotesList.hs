@@ -29,7 +29,7 @@ render title headerText maybeSearchPhrase entities allEntitiesCount pageNumber
         then redirect $ destRoute $ PageNumber allPagesCount
         else return ()
     setSession lastPageNumberKey $ T.pack . show $ pageNumber
-    loginBox
+    topbar
     $(widgetFile "notesList")
 
 showNotes :: [Filter Note] -> Text -> Text -> Maybe Text -> PageNumber ->
@@ -85,7 +85,7 @@ getNoteR noteId = do
                                 case noteTitle note of
                                     Just title -> title
                                     Nothing -> "notatka"
-        loginBox
+        topbar
         $(widgetFile "note")
 
 {- Returns the partition of notes into pages. Tuple elements:

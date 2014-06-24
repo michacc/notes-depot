@@ -17,5 +17,3 @@
 
 <div #noteContent>
     <pre>#{content}
-
-<p><a href="@{NotesListR $ PageNumber 1}">Powrót do listy notatek</a>

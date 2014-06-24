@@ -11,13 +11,13 @@ import Yesod.Auth(Route(LogoutR), maybeAuth)
 lastPageNumberKey :: Text
 lastPageNumberKey = "lastPageNumber"
 
-{- A widget that contains login information and an option to log out. It appear
-   if and only if a user is currently logged in. -}
-loginBox :: Widget
-loginBox = do
+{- A widget that contains some useful links, login information and an option to
+   log out. It appears if and only if a user is currently logged in. -}
+topbar :: Widget
+topbar = do
     maybeUser <- handlerToWidget $ fmap entityVal <$> maybeAuth
     authInfoId <- newIdent
-    $(widgetFile "loginBox")
+    $(widgetFile "topbar")
 
 {- If the note with given identifier is associated with given user identifier,
    returns it. Otherwise returns 'permission denied' response. If a note with
